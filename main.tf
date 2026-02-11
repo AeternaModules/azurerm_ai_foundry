@@ -1,5 +1,5 @@
-resource "azurerm_ai_foundry" "ai_foundrys" {
-  for_each = var.ai_foundrys
+resource "azurerm_ai_foundry" "ai_foundries" {
+  for_each = var.ai_foundries
 
   key_vault_id                   = each.value.key_vault_id
   location                       = each.value.location

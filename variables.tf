@@ -1,6 +1,6 @@
-variable "ai_foundrys" {
+variable "ai_foundries" {
   description = <<EOT
-Map of ai_foundrys, attributes below
+Map of ai_foundries, attributes below
 Required:
     - key_vault_id
     - location
@@ -39,7 +39,7 @@ EOT
     friendly_name                  = optional(string)
     high_business_impact_enabled   = optional(bool)
     primary_user_assigned_identity = optional(string)
-    public_network_access          = optional(string, "Enabled")
+    public_network_access          = optional(string) # Default: "Enabled"
     tags                           = optional(map(string))
     identity = object({
       identity_ids = optional(set(string))
