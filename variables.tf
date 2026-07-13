@@ -39,7 +39,7 @@ EOT
     friendly_name                  = optional(string)
     high_business_impact_enabled   = optional(bool)
     primary_user_assigned_identity = optional(string)
-    public_network_access          = optional(string) # Default: "Enabled"
+    public_network_access          = optional(string)
     tags                           = optional(map(string))
     identity = object({
       identity_ids = optional(set(string))
