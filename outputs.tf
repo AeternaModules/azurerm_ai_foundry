@@ -20,7 +20,7 @@ output "ai_foundries_discovery_url" {
 }
 output "ai_foundries_encryption" {
   description = "Map of encryption values across all ai_foundries, keyed the same as var.ai_foundries"
-  value       = { for k, v in azurerm_ai_foundry.ai_foundries : k => v.encryption if v.encryption != null && length(v.encryption) > 0 }
+  value       = { for k, v in azurerm_ai_foundry.ai_foundries : k => one(v.encryption) if v.encryption != null && length(v.encryption) > 0 }
 }
 output "ai_foundries_friendly_name" {
   description = "Map of friendly_name values across all ai_foundries, keyed the same as var.ai_foundries"
@@ -32,7 +32,7 @@ output "ai_foundries_high_business_impact_enabled" {
 }
 output "ai_foundries_identity" {
   description = "Map of identity values across all ai_foundries, keyed the same as var.ai_foundries"
-  value       = { for k, v in azurerm_ai_foundry.ai_foundries : k => v.identity if v.identity != null && length(v.identity) > 0 }
+  value       = { for k, v in azurerm_ai_foundry.ai_foundries : k => one(v.identity) if v.identity != null && length(v.identity) > 0 }
 }
 output "ai_foundries_key_vault_id" {
   description = "Map of key_vault_id values across all ai_foundries, keyed the same as var.ai_foundries"
@@ -44,7 +44,7 @@ output "ai_foundries_location" {
 }
 output "ai_foundries_managed_network" {
   description = "Map of managed_network values across all ai_foundries, keyed the same as var.ai_foundries"
-  value       = { for k, v in azurerm_ai_foundry.ai_foundries : k => v.managed_network if v.managed_network != null && length(v.managed_network) > 0 }
+  value       = { for k, v in azurerm_ai_foundry.ai_foundries : k => one(v.managed_network) if v.managed_network != null && length(v.managed_network) > 0 }
 }
 output "ai_foundries_name" {
   description = "Map of name values across all ai_foundries, keyed the same as var.ai_foundries"
